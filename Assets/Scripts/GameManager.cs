@@ -6,7 +6,10 @@ public class GameManager : MonoBehaviour
 {
     public Dongle lastDongle;
     public GameObject donglePrefab;
+    public GameObject effectPrefab;
     public Transform dongleGroup;
+    public Transform effectGroup;
+    public int maxLevel;
 
     void Awake()
     {
@@ -20,8 +23,13 @@ public class GameManager : MonoBehaviour
 
     Dongle GetDongle()
     {
-        GameObject instant = Instantiate(donglePrefab, dongleGroup);
-        Dongle instantDongle = instant.GetComponent<Dongle>();
+        // 이펙트 생성
+        GameObject instantEffectObj = Instantiate(effectPrefab, effectGroup);
+        ParticleSystem instantEffect = instantEffectObj.GetComponent<ParticleSystem>();
+        // 동글 생성
+        GameObject instantDongleObj = Instantiate(donglePrefab, dongleGroup);
+        Dongle instantDongle = instantDongleObj.GetComponent<Dongle>();
+        instantDongle.effect = instantEffect;
         return instantDongle;
     }
 
@@ -29,7 +37,8 @@ public class GameManager : MonoBehaviour
     {
         Dongle newDongle = GetDongle();
         lastDongle = newDongle;
-        lastDongle.level = Random.Range(0, 8);
+        lastDongle.manager = this;
+        lastDongle.level = Random.Range(0, maxLevel);
         lastDongle.gameObject.SetActive(true);
         StartCoroutine(WaitNext());
     }

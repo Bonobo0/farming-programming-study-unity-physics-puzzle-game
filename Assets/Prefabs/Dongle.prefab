@@ -102,6 +102,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   isDrag: 0
+  isMerge: 0
+  effect: {fileID: 0}
+  manager: {fileID: 0}
 --- !u!50 &3587888576465571022
 Rigidbody2D:
   serializedVersion: 4

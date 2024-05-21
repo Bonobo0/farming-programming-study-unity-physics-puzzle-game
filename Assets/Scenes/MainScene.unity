@@ -767,7 +767,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastDongle: {fileID: 0}
   donglePrefab: {fileID: 4551213054766385890, guid: 481ab0734399f4bcea93649ef8c25fde, type: 3}
+  effectPrefab: {fileID: 6916257186209067537, guid: ae30a6e44d31547aa8989cbd2339aaa4, type: 3}
   dongleGroup: {fileID: 1988009557}
+  effectGroup: {fileID: 890774888}
+  maxLevel: 2
 --- !u!4 &858092593
 Transform:
   m_ObjectHideFlags: 0
@@ -778,6 +781,37 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &890774887
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 890774888}
+  m_Layer: 0
+  m_Name: Effect Group
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &890774888
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890774887}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1267,6 +1301,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 313997328}
   - {fileID: 1988009557}
+  - {fileID: 890774888}
   - {fileID: 1946508558}
   - {fileID: 858092593}
   - {fileID: 1243220759}
